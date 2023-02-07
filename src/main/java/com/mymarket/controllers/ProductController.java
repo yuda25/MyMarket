@@ -44,7 +44,7 @@ public class ProductController {
     }
 
     @PutMapping("/update-product")
-    public ResponseEntity<Product> update(@RequestBody UpdateProductDto updateProductDto) throws NotFoundException {
+    public ResponseEntity<Product> update(@RequestBody @Valid UpdateProductDto updateProductDto) throws NotFoundException {
         return new ResponseEntity<Product>(productService.update(updateProductDto), HttpStatus.OK);
     }
 

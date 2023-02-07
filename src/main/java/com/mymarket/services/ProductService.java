@@ -35,10 +35,9 @@ public class ProductService {
     }
 
     public Product update(UpdateProductDto updateProductDto) throws NotFoundException {
-        Product product = productRepository.findById(updateProductDto.getId()).orElse(null);
-        if (product == null) {
-            throw new NotFoundException("Example with ID " + updateProductDto.getId() + " not found");
-        }
+        Product product = productRepository.findById(updateProductDto.getId())
+        .orElseThrow(() -> new NotFoundException("Product with ID " + updateProductDto.getId() + " not found"));
+
         product.setName(updateProductDto.getName());
         product.setDescription(updateProductDto.getDescription());
         product.setStock(updateProductDto.getStock());

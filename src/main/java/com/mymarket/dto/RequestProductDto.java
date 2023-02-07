@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Data
-@AllArgsConstructor(staticName = "build")
+@AllArgsConstructor
 @NoArgsConstructor
 public class RequestProductDto {
     @NotBlank(message = "name shouldn't be null")

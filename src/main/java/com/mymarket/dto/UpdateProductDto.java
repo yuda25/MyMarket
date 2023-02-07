@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor(staticName = "build")
 @NoArgsConstructor
 public class UpdateProductDto {
-    @NotBlank(message = "UUID shouldn't be null")
+    @NotNull(message = "UUID shouldn't be null")
     private UUID id;
     @NotBlank(message = "name shouldn't be null")
     private String name;
